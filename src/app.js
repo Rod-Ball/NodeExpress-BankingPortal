@@ -33,7 +33,7 @@ app.get('/payment', function(req, res){
 app.post('/payment', function(req, res){
     accounts.credit.balance -= req.body.amount;
     accounts.credit.available += parseInt(req.body.amount);
-    writeJSON();
+    writeJSON(); 
     res.render('payment', {message:"Payment Successful", account: accounts.credit});
 });
 
